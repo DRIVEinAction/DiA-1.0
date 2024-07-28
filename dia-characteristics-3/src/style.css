@@ -1,0 +1,193 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin: 10px 0 5px;
+    align-self: flex-start;
+}
+
+input[type="text"], input[type="password"], input[type="email"], select, textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+input[disabled], select[disabled] {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.greenButton {
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.redButton {
+    background-color: #dc3545;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+p {
+    margin: 5px 0;
+}
+
+#profilePic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.rating {
+    direction: rtl;
+    display: flex;
+    justify-content: center;
+}
+
+.rating input[type="radio"] {
+    display: none;
+}
+
+.rating label {
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.rating input[type="radio"]:checked ~ label {
+    color: #ffca08;
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+    color: #ffca08;
+}
+
+#feedbackOptions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.adminButton, .superAdminButton {
+    font-size: 12px;
+    padding: 5px;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    position: absolute;
+    bottom: 10px;
+}
+
+.superAdminButton {
+    left: 10px;
+}
+
+.adminButton {
+    right: 10px;
+}
+
+.rateButton {
+    background-color: #28a745;
+}
+
+.rateButton:hover {
+    background-color: #218838;
+}
+
+.drives-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.editable-drive {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.dropdown-drive {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.characteristic {
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+.characteristic.selected {
+    background-color: #28a745;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+}

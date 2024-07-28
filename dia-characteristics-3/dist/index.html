@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - DiA Characteristics 3</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <title>Feedback App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sign In Page -->
+    <div class="container" id="signInForm">
+        <h1>Sign In</h1>
+        <form id="signIn">
+            <label for="signInUsername">Username:</label>
+            <input type="text" id="signInUsername" name="username" required>
+            <label for="signInPassword">Password:</label>
+            <input type="password" id="signInPassword" name="password" required>
+            <button type="submit">Sign In</button>
+        </form>
+        <button type="button" id="registerButton">Register</button>
+        <button type="button" id="superAdminButton" class="superAdminButton">SUPER ADMIN</button>
+        <button type="button" id="adminButton" class="adminButton">ADMIN</button>
+    </div>
+
+    <!-- Registration Page -->
+    <div class="container" id="registerForm" style="display: none;">
+        <h1>Register</h1>
+        <form id="register">
+            <label for="regUsername">Username:</label>
+            <input type="text" id="regUsername" name="username" required>
+            <label for="regPassword">Password:</label>
+            <input type="password" id="regPassword" name="password" required>
+            <label for="regName">First Name:</label>
+            <input type="text" id="regName" name="name" required>
+            <label for="regSurname">Surname:</label>
+            <input type="text" id="regSurname" name="surname" required>
+            <label for="regProfilePic">Profile Picture (optional):</label>
+            <input type="file" id="regProfilePic" name="regProfilePic" accept="image/*">
+            <label for="regCompany">Company:</label>
+            <select id="regCompany" name="regCompany" required>
+                <option value="">--Select Company--</option>
+            </select>
+            <label for="regDepartment">Department:</label>
+            <select id="regDepartment" name="regDepartment" required>
+                <option value="">--Select Department--</option>
+            </select>
+            <label for="regEmail">Email:</label>
+            <input type="email" id="regEmail" name="email" required>
+            <label for="dominantDrives">Top 9 Dominant DRIVES:</label>
+            <div id="dominantDrives" class="drive-list">
+                <!-- Checkboxes for drives -->
+            </div>
+            <p id="dominantCount">Selected: 0/9</p>
+            <label for="drainerDrives">Bottom 6 DRAINERS:</label>
+            <div id="drainerDrives" class="drive-list">
+                <!-- Checkboxes for drives -->
+            </div>
+            <p id="drainerCount">Selected: 0/6</p>
+            <button type="submit">Register</button>
+        </form>
+        <button class="backButton">Back</button>
+    </div>
+
+    <!-- Profile Page -->
+    <div class="container" id="profilePage" style="display: none;">
+        <h1>My Profile</h1>
+        <div id="profile">
+            <img id="profilePic" alt="Profile Picture" style="display: none;">
+            <p><strong>Name:</strong> <input type="text" id="profileName" disabled></p>
+            <p><strong>Surname:</strong> <input type="text" id="profileSurname" disabled></p>
+            <p><strong>Company:</strong> <input type="text" id="profileCompany" disabled></p>
+            <p><strong>Department:</strong> <input type="text" id="profileDepartment" disabled></p>
+            <p><strong>Email:</strong> <input type="email" id="profileEmail" disabled></p>
+            <p><strong>Top 9 Dominant DRIVES:</strong></p>
+            <ul id="profileDominantDrives" class="drives-list"></ul>
+            <p><strong>Bottom 6 DRAINERS:</strong></p>
+            <ul id="profileDrainerDrives" class="drives-list"></ul>
+            <div id="editProfileSection" style="display: none;">
+                <label for="editProfilePic">Profile Picture (optional):</label>
+                <input type="file" id="editProfilePic" name="editProfilePic" accept="image/*">
+                <label for="editDominantDrives">Top 9 Dominant DRIVES:</label>
+                <div id="editDominantDrives" class="drive-list">
+                    <!-- Dropdowns for drives -->
+                </div>
+                <p id="editDominantCount">Selected: 0/9</p>
+                <label for="editDrainerDrives">Bottom 6 DRAINERS:</label>
+                <div id="editDrainerDrives" class="drive-list">
+                    <!-- Dropdowns for drives -->
+                </div>
+                <p id="editDrainerCount">Selected: 0/6</p>
+            </div>
+            <button id="editProfileButton">Edit Profile</button>
+            <button id="saveProfileButton" style="display: none;">Save Profile</button>
+            <button id="rateSomeoneButton" class="greenButton">RATE SOMEONE</button>
+        </div>
+        <button class="backButton">Back</button>
+    </div>
+
+    <!-- Rating Page -->
+    <div class="container" id="ratingPage" style="display: none;">
+        <h1>ACKNOWLEDGE A COLLEAGUE</h1>
+        <form id="ratingForm">
+            <label for="teamMember">Select Team Member:</label>
+            <select id="teamMember" name="teamMember" required disabled>
+                <option value="">--Select Team Member--</option>
+            </select>
+            <label for="teamMemberDrive">Select Drive:</label>
+            <select id="teamMemberDrive" name="teamMemberDrive" required>
+                <option value="">--Select Drive--</option>
+            </select>
+            <label for="feedbackText">Select the Drive Characteristics that stood out in this person:</label>
+            <ul id="characteristicsList" class="drive-list"></ul>
+            <button type="button" id="nextButton">NEXT</button>
+            <div id="contextSection" style="display: none;">
+                <label for="contextText">Please give a brief description about the context or situation where you observed these Characteristics.</label>
+                <textarea id="contextText" name="contextText" rows="4" required></textarea>
+                <button type="button" id="doneButton">DONE</button>
+            </div>
+        </form>
+        <button class="backButton">Back</button>
+    </div>
+
+    <!-- Super Admin Page -->
+    <div class="container" id="superAdminPage" style="display: none;">
+        <h1>SUPER ADMIN Panel</h1>
+        <h2>Generate Login for Manager / Supervisor</h2>
+        <form id="generateAdminCodeForm">
+            <label for="adminEmail">Manager / Supervisor Email:</label>
+            <input type="email" id="adminEmail" name="adminEmail" required>
+            <label for="adminName">Manager / Supervisor Name and Surname:</label>
+            <input type="text" id="adminName" name="adminName" required>
+            <label for="adminCompany">Manager / Supervisor Company:</label>
+            <select id="adminCompany" name="adminCompany" required>
+                <option value="">--Select Company--</option>
+            </select>
+            <label for="adminDepartment">Manager / Supervisor Department:</label>
+            <select id="adminDepartment" name="adminDepartment" required>
+                <option value="">--Select Department--</option>
+            </select>
+            <button type="submit">Generate Unique Login</button>
+        </form>
+        <p id="emailVerificationStatus"></p>
+        <ul id="adminCodesList"></ul>
+        <button class="backButton">Back</button>
+        <button id="signOutButton">Sign Out</button>
+    </div>
+
+    <!-- Admin Page -->
+    <div class="container" id="adminPage" style="display: none;">
+        <h1>Admin Panel</h1>
+        <label for="adminCompanySelect">Company:</label>
+        <select id="adminCompanySelect" name="adminCompanySelect">
+            <option value="">--Select Company--</option>
+        </select>
+        <ul id="adminProfileList"></ul>
+        <button class="backButton">Back</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
